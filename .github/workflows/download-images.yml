@@ -1,0 +1,67 @@
+name: Download Missing Images
+
+# Run manually from GitHub Actions tab, or automatically on push if images are missing
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/download-assets.sh'
+
+jobs:
+  download-images:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Download missing images
+        run: |
+          mkdir -p img
+          BASE="https://www.gobeyondchallenge.com/wp-content/uploads"
+          UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
+          download_if_missing() {
+            local url="$1"
+            local file="img/$2"
+            if [ -f "$file" ] && [ "$(wc -c < "$file")" -gt 500 ]; then
+              echo "✓ Already present: $2"
+              return
+            fi
+            echo "↓ Downloading: $2"
+            curl -sL --max-time 30 \
+              -H "User-Agent: $UA" \
+              -H "Referer: https://www.gobeyondchallenge.com/" \
+              -H "Accept: image/avif,image/webp,image/apng,image/*,*/*;q=0.8" \
+              -H "Accept-Language: en-GB,en;q=0.9" \
+              -H "Cache-Control: no-cache" \
+              -o "$file" "$url" && echo "  ✓ Saved ($(wc -c < "$file") bytes)" || echo "  ✗ Failed"
+          }
+
+          download_if_missing "$BASE/2020/11/countrytocapital-01.png"       "countrytocapital-01.png"
+          download_if_missing "$BASE/2023/11/tt2023-0215-345x198.jpg"        "tt2023-0215-345x198.jpg"
+          download_if_missing "$BASE/2022/02/Veteran-Owned-Logo-300x149.jpeg" "Veteran-Owned-Logo-300x149.jpeg"
+
+          echo "--- Image sizes ---"
+          ls -lh img/countrytocapital-01.png img/tt2023-0215-345x198.jpg img/Veteran-Owned-Logo-300x149.jpeg 2>/dev/null || true
+
+      - name: Check if new images were downloaded
+        id: check
+        run: |
+          git diff --stat
+          if git status --short | grep -q "img/"; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push images
+        if: steps.check.outputs.has_changes == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add img/
+          git commit -m "Add missing images via GitHub Actions"
+          git push
