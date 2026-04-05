@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Go Beyond Challenge</title>
+  <meta name="description" content="Get in touch with the Go Beyond Challenge team. Ask about events, sponsorship or join our mailing list.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header id="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="img/REWORKED-LOGO-2020-11-13.png"
+             data-cdn="2020/11/REWORKED-LOGO-2020-11-13.png"
+             alt="Go Beyond Challenge">
+      </a>
+      <button id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="main-nav">
+        <li><a href="index.html">Home</a></li>
+        <li class="has-dropdown">
+          <a href="ultras.html">Ultras</a>
+          <ul class="dropdown">
+            <li><a href="events/country-to-capital.html">Country to Capital Ultra</a></li>
+            <li><a href="events/rose-of-the-shires.html">Rose of the Shires Ultra</a></li>
+            <li><a href="events/shires-spires-ultra.html">Shires &amp; Spires Ultra</a></li>
+            <li><a href="events/thames-trail.html">Thames Trail Ultra</a></li>
+            <li><a href="events/capital-to-country.html">Capital to Country Multi-Day</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="shorter-runs.html">Shorter Runs</a>
+          <ul class="dropdown">
+            <li><a href="events/dirt-run.html">Dirt Run (Irchester &amp; Brigstock)</a></li>
+            <li><a href="events/shires-spires-festival.html">Shires &amp; Spires Running Festival</a></li>
+            <li><a href="events/beat-the-sunset.html">Beat the Sunset 5K</a></li>
+            <li><a href="events/northampton-run.html">Amazing Northampton Run</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="triathlon.html">Triathlon</a>
+          <ul class="dropdown">
+            <li><a href="events/bedford-triathlon.html">Bedford Team Relays</a></li>
+          </ul>
+        </li>
+        <li><a href="cyclosportive.html">Cyclosportive</a></li>
+        <li class="has-dropdown">
+          <a href="about.html">About Us</a>
+          <ul class="dropdown">
+            <li><a href="about.html">About Go Beyond</a></li>
+            <li><a href="about/she-races.html">She Races</a></li>
+            <li><a href="about/become-marshal.html">Become a Marshal</a></li>
+            <li><a href="about/terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="about/privacy.html">Privacy Policy</a></li>
+          </ul>
+        </li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li class="active"><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero" style="background-image: url('img/h1-contact-01.png');">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> › Contact</div>
+      <h1>Contact Us</h1>
+      <p>Talk to the Go Beyond Challenge team</p>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Info -->
+        <div class="contact-info">
+          <h2>Get in Touch</h2>
+          <div class="divider-orange" style="margin-left:0;"></div>
+          <p>Please contact us to ask about events, sponsorship, or general commercial questions. We're always happy to chat.</p>
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon">📍</div>
+            <div class="contact-detail__text">
+              <strong>Address</strong>
+              <span>Tingdene House, 21–24 Bradfield Road<br>Finedon Road Industrial Estate<br>Wellingborough, Northamptonshire<br>NN8 4HB, United Kingdom</span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon">📞</div>
+            <div class="contact-detail__text">
+              <strong>Telephone</strong>
+              <span><a href="tel:+447989850170">+44 (0) 7989 850170</a></span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon">✉️</div>
+            <div class="contact-detail__text">
+              <strong>Email</strong>
+              <span><a href="mailto:admin@gobeyondchallenge.co.uk">admin@gobeyondchallenge.co.uk</a></span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon">📘</div>
+            <div class="contact-detail__text">
+              <strong>Social</strong>
+              <span><a href="https://www.facebook.com/gobeyondchallenge" target="_blank" rel="noopener">facebook.com/gobeyondchallenge</a></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="contact-form-wrap">
+          <h3>Send Us a Message</h3>
+          <form id="contact-form" action="https://formspree.io/f/xwvndkow" method="POST">
+            <div class="form-group">
+              <label for="name">Your Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Jane Smith">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required placeholder="jane@example.com">
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Event enquiry">
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required placeholder="How can we help you?"></textarea>
+            </div>
+            <!-- Honeypot -->
+            <input type="text" name="_gotcha" style="display:none">
+            <input type="hidden" name="_subject" value="New message from Go Beyond Challenge website">
+            <div class="form-submit">
+              <button type="submit" class="btn btn--orange">Send Message</button>
+            </div>
+            <div id="form-success">✅ Thank you! We'll be in touch soon.</div>
+            <div id="form-error">❌ Something went wrong. Please try emailing us directly.</div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MAILING LIST ===== -->
+  <section class="section section--alt">
+    <div class="container text-center">
+      <h2>Hear About Our Events First</h2>
+      <div class="divider-orange"></div>
+      <p style="max-width:500px;margin:0 auto 32px;">Jump on our mailing list. We'll tell you about key dates as we create them.</p>
+      <form action="https://formspree.io/f/xwvndkow" method="POST" style="max-width:480px;margin:0 auto;display:flex;gap:12px;flex-wrap:wrap;">
+        <input type="text" name="name" placeholder="Your name" required
+               style="flex:1;min-width:140px;padding:12px 16px;border:1.5px solid #ddd;border-radius:5px;font-size:0.9rem;font-family:inherit;">
+        <input type="email" name="email" placeholder="Your email" required
+               style="flex:2;min-width:180px;padding:12px 16px;border:1.5px solid #ddd;border-radius:5px;font-size:0.9rem;font-family:inherit;">
+        <input type="hidden" name="_subject" value="Mailing list signup — Go Beyond Challenge">
+        <input type="hidden" name="type" value="mailing-list">
+        <input type="text" name="_gotcha" style="display:none">
+        <button type="submit" class="btn btn--orange">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <img src="img/LOGO-WHITE-TRANSPARENT-2.png"
+                 data-cdn="2020/11/LOGO-WHITE-TRANSPARENT-2.png"
+                 alt="Go Beyond Challenge">
+          </div>
+          <p>Established and popular endurance events in Northamptonshire and beyond, run by athletes for athletes.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="calendar.html">Full Calendar</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Events</h4>
+          <ul>
+            <li><a href="events/country-to-capital.html">Country to Capital</a></li>
+            <li><a href="events/rose-of-the-shires.html">Rose of the Shires</a></li>
+            <li><a href="events/dirt-run.html">Dirt Run</a></li>
+            <li><a href="events/bedford-triathlon.html">Bedford Triathlon</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Information</h4>
+          <ul>
+            <li><a href="about/terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="about/privacy.html">Privacy Policy</a></li>
+            <li><a href="about/she-races.html">She Races</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Go Beyond Challenge. All rights reserved.</span>
+        <span>
+          <a href="about/terms.html">Terms</a> ·
+          <a href="about/privacy.html">Privacy</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Formspree AJAX submission
+    const form = document.getElementById('contact-form');
+    if (form) {
+      form.addEventListener('submit', async e => {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            form.reset();
+            document.getElementById('form-success').style.display = 'block';
+          } else {
+            document.getElementById('form-error').style.display = 'block';
+          }
+        } catch {
+          document.getElementById('form-error').style.display = 'block';
+        } finally {
+          btn.textContent = 'Send Message';
+          btn.disabled = false;
+        }
+      });
+    }
+  </script>
+</body>
+</html>

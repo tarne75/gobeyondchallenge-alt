@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Calendar — Go Beyond Challenge</title>
+  <meta name="description" content="Full calendar of Go Beyond Challenge events. Filter by type — ultra marathons, runs, triathlon, cyclosportive.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header id="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="img/REWORKED-LOGO-2020-11-13.png"
+             data-cdn="2020/11/REWORKED-LOGO-2020-11-13.png"
+             alt="Go Beyond Challenge">
+      </a>
+      <button id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="main-nav">
+        <li><a href="index.html">Home</a></li>
+        <li class="has-dropdown">
+          <a href="ultras.html">Ultras</a>
+          <ul class="dropdown">
+            <li><a href="events/country-to-capital.html">Country to Capital Ultra</a></li>
+            <li><a href="events/rose-of-the-shires.html">Rose of the Shires Ultra</a></li>
+            <li><a href="events/shires-spires-ultra.html">Shires &amp; Spires Ultra</a></li>
+            <li><a href="events/thames-trail.html">Thames Trail Ultra</a></li>
+            <li><a href="events/capital-to-country.html">Capital to Country Multi-Day</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="shorter-runs.html">Shorter Runs</a>
+          <ul class="dropdown">
+            <li><a href="events/dirt-run.html">Dirt Run (Irchester &amp; Brigstock)</a></li>
+            <li><a href="events/shires-spires-festival.html">Shires &amp; Spires Running Festival</a></li>
+            <li><a href="events/beat-the-sunset.html">Beat the Sunset 5K</a></li>
+            <li><a href="events/northampton-run.html">Amazing Northampton Run</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="triathlon.html">Triathlon</a>
+          <ul class="dropdown">
+            <li><a href="events/bedford-triathlon.html">Bedford Team Relays</a></li>
+          </ul>
+        </li>
+        <li><a href="cyclosportive.html">Cyclosportive</a></li>
+        <li class="has-dropdown">
+          <a href="about.html">About Us</a>
+          <ul class="dropdown">
+            <li><a href="about.html">About Go Beyond</a></li>
+            <li><a href="about/she-races.html">She Races</a></li>
+            <li><a href="about/become-marshal.html">Become a Marshal</a></li>
+            <li><a href="about/terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="about/privacy.html">Privacy Policy</a></li>
+          </ul>
+        </li>
+        <li class="active"><a href="calendar.html">Calendar</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero" style="background-image: url('img/p1montage2022low.jpg');">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> › Calendar</div>
+      <h1>Event Calendar</h1>
+      <p>All Go Beyond Challenge events for 2026 — updated automatically from our data file</p>
+    </div>
+  </section>
+
+  <!-- ===== CALENDAR ===== -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Filters -->
+      <div class="calendar-filters" id="calendar-filters">
+        <button class="filter-btn active" data-filter="all">All Events</button>
+        <button class="filter-btn" data-filter="ultra">Ultra Marathons</button>
+        <button class="filter-btn" data-filter="run">Runs &amp; Shorter</button>
+        <button class="filter-btn" data-filter="tri">Triathlon</button>
+        <button class="filter-btn" data-filter="cycle">Cyclosportive</button>
+      </div>
+
+      <!-- Loading state -->
+      <div id="calendar-loading">
+        <p>Loading events…</p>
+      </div>
+
+      <!-- Grid (populated by JS) -->
+      <div class="calendar-grid" id="calendar-grid" style="display:none;"></div>
+
+      <!-- Empty state -->
+      <div id="calendar-empty">
+        <p>No events found for this filter. <button class="btn btn--outline" onclick="setFilter('all')">Show all events</button></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <img src="img/LOGO-WHITE-TRANSPARENT-2.png"
+                 data-cdn="2020/11/LOGO-WHITE-TRANSPARENT-2.png"
+                 alt="Go Beyond Challenge">
+          </div>
+          <p>Established and popular endurance events in Northamptonshire and beyond, run by athletes for athletes.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/gobeyondchallenge" target="_blank" rel="noopener" aria-label="Facebook">
+              <img src="img/facebook-e1606494101989.png"
+                   data-cdn="2020/11/facebook-e1606494101989.png"
+                   alt="Facebook">
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="calendar.html">Full Calendar</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Ultras</h4>
+          <ul>
+            <li><a href="events/country-to-capital.html">Country to Capital</a></li>
+            <li><a href="events/rose-of-the-shires.html">Rose of the Shires</a></li>
+            <li><a href="events/thames-trail.html">Thames Trail Ultra</a></li>
+            <li><a href="events/capital-to-country.html">Capital to Country</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Other Events</h4>
+          <ul>
+            <li><a href="events/dirt-run.html">Dirt Run</a></li>
+            <li><a href="events/bedford-triathlon.html">Bedford Triathlon</a></li>
+            <li><a href="events/beat-the-sunset.html">Beat the Sunset</a></li>
+            <li><a href="cyclosportive.html">Cyclosportive</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Go Beyond Challenge. All rights reserved.</span>
+        <span>
+          <a href="about/terms.html">Terms</a> ·
+          <a href="about/privacy.html">Privacy</a> ·
+          <a href="contact.html">Contact</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    /* ============================================================
+       Calendar page — fetches data/events.json at render time
+       To update events: edit data/events.json only (no HTML edits)
+       ============================================================ */
+
+    const CDN_BASE = 'https://www.gobeyondchallenge.com/wp-content/uploads/';
+    let allEvents  = [];
+    let activeFilter = 'all';
+
+    // Category tag CSS class map
+    const tagClass = { ultra: 'tag--ultra', run: 'tag--run', cycle: 'tag--cycle', tri: 'tag--tri' };
+
+    function buildCard(ev) {
+      // Decide image src — local first, CDN fallback handled by onerror
+      const imgSrc  = ev.image;
+      const imgFallback = CDN_BASE + ev.imageCDN;
+
+      const tags = (ev.tags || []).slice(0, 3).map(t =>
+        `<span class="tag">${t}</span>`
+      ).join('');
+
+      return `
+        <div class="cal-card" data-category="${ev.category}">
+          <img class="cal-card__img"
+               src="${imgSrc}"
+               onerror="this.onerror=null;this.src='${imgFallback}'"
+               alt="${ev.title}">
+          <div class="cal-card__body">
+            <div class="cal-card__month">${ev.month} 2026</div>
+            <div class="cal-card__title">${ev.title}</div>
+            <div class="cal-card__date">📅 ${ev.date}</div>
+            <div class="cal-card__detail">
+              <strong>${ev.categoryLabel}</strong> · ${ev.distance}<br>
+              📍 ${ev.location}<br><br>
+              ${ev.description}
+            </div>
+            <div class="cal-card__tags">${tags}</div>
+            <a href="${ev.link}" class="cal-card__enter">Event Details</a>
+          </div>
+        </div>`;
+    }
+
+    function renderGrid(filter) {
+      activeFilter = filter;
+      const grid = document.getElementById('calendar-grid');
+      const empty = document.getElementById('calendar-empty');
+
+      const filtered = filter === 'all'
+        ? allEvents
+        : allEvents.filter(e => e.category === filter);
+
+      if (filtered.length === 0) {
+        grid.style.display = 'none';
+        empty.style.display = 'block';
+        return;
+      }
+
+      grid.innerHTML = filtered.map(buildCard).join('');
+      grid.style.display = 'grid';
+      empty.style.display = 'none';
+    }
+
+    function setFilter(filter) {
+      activeFilter = filter;
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.filter === filter);
+      });
+      renderGrid(filter);
+    }
+
+    // Wire up filter buttons
+    document.getElementById('calendar-filters').addEventListener('click', e => {
+      if (e.target.classList.contains('filter-btn')) {
+        setFilter(e.target.dataset.filter);
+      }
+    });
+
+    // Fetch and render
+    fetch('data/events.json')
+      .then(r => {
+        if (!r.ok) throw new Error('Failed to load events');
+        return r.json();
+      })
+      .then(data => {
+        allEvents = data.events.sort((a, b) => new Date(a.dateISO) - new Date(b.dateISO));
+        document.getElementById('calendar-loading').style.display = 'none';
+        renderGrid('all');
+      })
+      .catch(err => {
+        document.getElementById('calendar-loading').innerHTML =
+          '<p style="color:#e74c3c;">Could not load events. Please try refreshing the page.</p>';
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
